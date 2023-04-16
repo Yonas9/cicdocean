@@ -1,0 +1,10 @@
+mule:
+  version: "4.4.0"
+  
+anypoint:
+  username: "DevMax"
+  password: "MuleMax"  
+cloudhub:
+  app: "blueOcean"
+  worker: "Micro"
+  bg: "SelfTaught"

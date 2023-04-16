@@ -36,13 +36,13 @@
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${mule.version}</muleVersion>
 						<!-- Deploy User Parameter -->
-						<username>${username}</username>
-						<password>${password}</password>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
 						<!-- Environment Parameter -->
-						<environment>$Sandbox</environment>
-						<applicationName>blueocean</applicationName>
-						<businessGroup>SelfTaught</businessGroup>
-						<workerType>Micro</workerType>
+						<environment>$cloudhub.environment</environment>
+						<applicationName>cloudhub.app</applicationName>
+						<businessGroup>cloudhub.bg</businessGroup>
+						<workerType>cloudhub.worker</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
