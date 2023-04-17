@@ -7,7 +7,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4b8a3c07-e65e-46a3-9c98-fbe69345069b" >
 		<http:listener-connection host="${http.host}" port="${http.port}" />
 	</http:listener-config>
-	<configuration-properties doc:name="Configuration properties" doc:id="c0411e7d-b4ac-4e53-b7e6-a392771cd538" file="${env}.properties" />
+	<configuration-properties doc:name="Configuration properties" doc:id="c0411e7d-b4ac-4e53-b7e6-a392771cd538" file="${env}.yaml" />
 	<global-property doc:name="Global Property" doc:id="12f2b611-aae1-49e7-adf1-5d812b8522a7" name="env" value="local" />
 	<flow name="blueoceanFlow" doc:id="0c24a5fa-d9cb-4ec9-a59b-590cae695159" >
 		<http:listener doc:name="Listener" doc:id="bdfc8cc8-9840-4fc4-a912-87a61e291fdd" config-ref="HTTP_Listener_config" path="/ocean"/>
