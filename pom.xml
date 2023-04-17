@@ -25,28 +25,32 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.0.0</version>
+				
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>${mule.version}</muleVersion>
-						<!-- Deploy User Parameter -->
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
-						<!-- Environment Parameter -->
-						<environment>$cloudhub.environment</environment>
-						<applicationName>cloudhub.app</applicationName>
-						<businessGroup>cloudhub.bg</businessGroup>
-						<workerType>cloudhub.worker</workerType>
-						<objectStoreV2>true</objectStoreV2>
-					</cloudHubDeployment>
-				</configuration>
-			</plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>3.7.1</version>
+  <extensions>true</extensions>
+ <configuration>
+    <cloudHubDeployment>
+      <uri>https://anypoint.mulesoft.com</uri>
+      <muleVersion>4.4.0</muleVersion>
+      <username>${anypoint.username}</username>
+      <password>${anypoint.password}</password>
+      <applicationName>blueocean11</applicationName>
+      <businessGroup>SelfTaught</businessGroup>
+      <environment>Sandbox</environment>
+      <region>us-east-2</region>
+      <workers>1</workers>
+      <workerType>Micro</workerType>
+      <objectStoreV2>true</objectStoreV2>
+      <properties>
+        <key>env</key>
+      </properties>
+    </cloudHubDeployment>
+  </configuration>
+</plugin>
 		</plugins>
 	</build>
 

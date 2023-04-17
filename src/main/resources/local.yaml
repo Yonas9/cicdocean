@@ -1,10 +1,17 @@
-mule:
-  version: "4.4.0"
+http:
+  host: "0.0.0.0"
+  port: "8081"
+app:
+  runtime: "4.4.0"
   
 anypoint:
   username: "DevMax"
-  password: "MuleMax"  
+  password: "MuleMax2021"
+    
 cloudhub:
-  app: "blueOcean"
-  worker: "Micro"
+  app: "blueoceansh"
+  workers: "1"
+  workerType: "Micro"
+  region: "US East, Ohio"
   bg: "SelfTaught"
+  environment: "Sandbox"
