@@ -15,5 +15,5 @@ cloudhub:
   region: "us-east-2"
   bg: "SelfTaught"
   environment: 
-    - "Sandbox"
-    - "Production"
+    - Sandbox
+    - Production
