@@ -28,7 +28,19 @@ pipeline {
         APP_NAME = 'blueocean'
       }
       steps {
-            bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
+       script {
+                    def yamlDoc = """
+                    environment:
+                      cloudhub:
+                        - Sandbox
+                        - Production
+                    """
+                    def yamlMap = readYaml(text: yamlDoc)
+                    
+                    // Use the `yamlMap` variable to access the YAML document in your pipeline
+                    echo "The cloudhub environment contains: ${yamlMap.environment.cloudhub}"
+                }
+            bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment[0]="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
     stage('Deploy Production') {
@@ -37,7 +49,19 @@ pipeline {
         APP_NAME = 'blueocean'
       }
       steps {
-            bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
+       script {
+                    def yamlDoc = """
+                    environment:
+                      cloudhub:
+                        - Sandbox
+                        - Production
+                    """
+                    def yamlMap = readYaml(text: yamlDoc)
+                    
+                    // Use the `yamlMap` variable to access the YAML document in your pipeline
+                    echo "The cloudhub environment contains: ${yamlMap.environment.cloudhub}"
+                }
+            bat 'mvn -U -V -e -B -gs %M2SETTINGS% -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment[1]="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
       }
     }
   }

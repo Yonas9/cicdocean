@@ -14,4 +14,6 @@ cloudhub:
   worker: "Micro"
   region: "us-east-2"
   bg: "SelfTaught"
-  environment: "Sandbox"
+  environment: 
+    - "Sandbox"
+    - "Production"
