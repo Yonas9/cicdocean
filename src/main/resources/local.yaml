@@ -1,8 +1,9 @@
 http:
   host: "0.0.0.0"
   port: "8081"
-app:
-  runtime: "4.4.0"
+  path: "/ocean"
+mule:
+  version: "4.4.0"
   
 anypoint:
   username: "DevMax"
